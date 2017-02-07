@@ -1,0 +1,9 @@
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^www.jeuxderoles.game$ [NC,OR]
+
+RewriteCond %{HTTP_HOST} ^www.jeuxderoles.game$
+
+RewriteCond %{REQUEST_URI} !web/
+
+RewriteRule (.*) /web/$1 [L]
