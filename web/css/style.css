@@ -1,0 +1,58 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 9 févr. 2017, 13:58:57
+    Author     : sebastien-javary
+*/
+body{
+    visibility: hidden;
+    background-color: rgba(142,109,35,0.8);
+}
+button{
+    position: relative;
+    border-radius: 0;
+    background-color: rgba(50,206,153,0.8);
+    color: rgba(196,20,243,0.8);
+    width: 19em;
+    height: 5em;
+    line-height: 5em;
+    font-size: 4em;
+}
+button:hover{
+    position: relative;
+    border-radius: 0;
+    background-color: rgba(196,20,243,0.8);
+    color: rgba(50,206,153,0.8);
+    width: 19em;
+    height: 5em;
+    line-height: 5em;
+    font-size: 4em;
+}
+
+#selection{
+    display: none;
+    width: 15em;
+    position: relative;
+    padding: 15px;
+    box-shadow: 0 0 5px #222222;
+}
+#selection > input{
+    width: 100%;
+}
+#selection > input[type='text']{
+    background-color: rgba(230,65,35,0.5);
+    margin-bottom: 10px;
+    border: 0;
+    height: 30px;
+}
+#selection > input[type='submit']{
+    background-color: rgba(10,26,85,0.5);
+    color: #f9ecec;
+}
+#selection > input[type='submit']:hover{
+    background-color: #f9ecec;
+    color: rgba(10,26,85,0.5);
+}
