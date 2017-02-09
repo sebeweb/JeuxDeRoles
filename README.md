@@ -21,3 +21,7 @@ Si necessaire nous fournirons le cahier des charges vie le lien sur le drive.
 ##Procédure d'installation
 1. Si c'est nécessaire, mettre les droits sur le dossier
 2. Mettre à jour les dépendances
+
+##Information complementaire:
+Import fichier sql dans base de donne:
+/sql/jeu_de_role.sql commit numero 50e545acb8b385dd88ee951735d296876a97439e
