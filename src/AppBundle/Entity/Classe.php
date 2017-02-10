@@ -11,6 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ClasseRepository")
  */
 class Classe {
+
     /**
      * @var int
      *
@@ -31,18 +32,16 @@ class Classe {
      * @var \stdClass
      *
      * @ORM\OneToOne(targetEntity= "Stats")
-     * @ORM\JoinColumn(name="fk_stats", referencedColumnName="id", unique=true)
+     * @ORM\JoinColumn(name="fk_stats", referencedColumnName="id")
      */
     private $stats;
-
 
     /**
      * Get id
      *
      * @return int
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -53,8 +52,7 @@ class Classe {
      *
      * @return Classe
      */
-    public function setNom($nom)
-    {
+    public function setNom($nom) {
         $this->nom = $nom;
 
         return $this;
@@ -65,8 +63,7 @@ class Classe {
      *
      * @return string
      */
-    public function getNom()
-    {
+    public function getNom() {
         return $this->nom;
     }
 
@@ -77,8 +74,7 @@ class Classe {
      *
      * @return Classe
      */
-    public function setStats($stats)
-    {
+    public function setStats($stats) {
         $this->stats = $stats;
 
         return $this;
@@ -89,9 +85,12 @@ class Classe {
      *
      * @return \stdClass
      */
-    public function getStats()
-    {
+    public function getStats() {
         return $this->stats;
     }
-}
 
+    public function __toString() {
+        return $this->getNom();
+    }
+
+}

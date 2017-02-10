@@ -39,7 +39,7 @@ class Personnage {
     /**
      * @var \stdClass
      *
-     * @ORM\OneToOne(targetEntity= "Race")
+     * @ORM\ManyToOne(targetEntity= "Race")
      * @ORM\JoinColumn(name="fk_race", referencedColumnName="id")
      */
     private $race;
@@ -47,7 +47,7 @@ class Personnage {
     /**
      * @var \stdClass
      *
-     * @ORM\OneToOne(targetEntity= "Classe")
+     * @ORM\ManyToOne(targetEntity= "Classe")
      * @ORM\JoinColumn(name="fk_classes", referencedColumnName="id")
      */
     private $classe;
@@ -204,6 +204,19 @@ class Personnage {
      */
     public function paul() {
         
+    }
+
+    function __construct() {
+        $this->pa = 2;
+    }
+
+    public function majStats() {
+        $this->stats = new Stats();
+        $this->stats->setPv($this->race->getStats()->getPv() + $this->classe->getStats()->getPv());
+        $this->stats->setAtt($this->race->getStats()->getAtt() + $this->classe->getStats()->getAtt());
+        $this->stats->setMov($this->race->getStats()->getMov() + $this->classe->getStats()->getMov());
+        $this->stats->setDef($this->race->getStats()->getDef() + $this->classe->getStats()->getDef());
+        return $this->stats;
     }
 
 }

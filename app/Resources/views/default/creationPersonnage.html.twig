@@ -1,5 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
+    <div class="formPerso">
+        {{ joueur.email }}
+        {{form_start(formPerso, {'attr':{'action':path("savePersonnage")}})}}
+        {{form_widget(formPerso.nom, {'attr':{'placeholder':'Nom du personnage'}})}}
+        {{form_widget(formPerso.race, {'attr':{'value':'Choisir une race'}})}}
+        {{form_widget(formPerso.classe, {'attr':{'placeholder':'Choisir une race'}})}}
+        <input type="submit" placeholder="validez"/>
+        {{form_end(formPerso)}}
+    </div>
 {% endblock %}

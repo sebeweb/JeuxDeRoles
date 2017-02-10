@@ -56,3 +56,21 @@ button:hover{
     background-color: #f9ecec;
     color: rgba(10,26,85,0.5);
 }
+.formPerso{
+    position: relative;
+    color: darkred;
+    width: 15em;
+    padding: 15px;
+    box-shadow: 0 0 5px #222222;
+}
+
+.formPerso > input{
+    background-color: rgba(32,74,102,0.5);
+    color: #6d6;
+    width: 100%;
+}
+.formPerso > input[type='submit']{
+    background-color: rgba(68,48,9,0.5);
+    color: #6d6;
+    width: 100%;
+}

@@ -3,12 +3,14 @@
 $(document).ready(function () {
     centrerButton();
     centrerForm();
+    centrerFormPerso();
     $("body").css("visibility", "visible");
 });
 
 $(window).resize(function () {
     centrerButton();
     centrerForm();
+    centrerFormPerso();
 });
 
 $("button").click(function () {
@@ -42,6 +44,21 @@ function centrerForm() {
     var left = (w - $("#selection").width()) / 2;
     //on affecte les nouvelles position calcule
     $("#selection").css({
+        "left": left + "px",
+        "top": top + "px"
+    });
+
+}
+function centrerFormPerso() {
+    // on recupere les dimension de la fenetre
+    var w = $(window).width();
+    var h = $(window).height();
+
+    // on calcul la position du boutton afin qu'il soit centré
+    var top = (h - $(".formPerso").height()) / 2;
+    var left = (w - $(".formPerso").width()) / 2;
+    //on affecte les nouvelles position calcule
+    $(".formPerso").css({
         "left": left + "px",
         "top": top + "px"
     });
