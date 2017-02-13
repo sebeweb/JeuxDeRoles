@@ -74,11 +74,11 @@ class PlayerController extends Controller {
         $em->persist($personnage);
         $this->mergeJoueur($personnage, $r, $em);
         $em->flush();
-        return $this->redirectToRoute("switch");
+        return $this->redirectToRoute("stats");
     }
 
     /**
-     * Cette mehode nous permet de lier un joueur a un personnage
+     * Cette methode nous permet de lier un joueur a un personnage
      * 
      * @param type $perso personnage a merger
      * @param type $r Request

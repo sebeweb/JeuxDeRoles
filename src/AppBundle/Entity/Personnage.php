@@ -163,7 +163,7 @@ class Personnage {
      *
      * @return int
      */
-    function getPa(): type {
+    function getPa(){
         return $this->pa;
     }
 
@@ -174,7 +174,7 @@ class Personnage {
      *
      * @return Personnage
      */
-    function setPa(type $pa) {
+    function setPa($pa) {
         $this->pa = $pa;
         return $this;
     }

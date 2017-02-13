@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="formPerso">
+        {{ joueur.email }}
+        {{form_start(editStats)}}
+        {{form_widget(editStats,{'attr':{'min': joueur.personnage.stats.pv}})}}
+        {{form_widget(editStats)}}
+        {{form_widget(editStats)}}
+        {{form_widget(editStats)}}
+        <input type="number" min="{{joueur.personnage.stats.pv}}"/>
+        {{form_end (editStats)}}
+    </div>
+{% endblock %}
