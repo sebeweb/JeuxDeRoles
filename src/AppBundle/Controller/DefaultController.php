@@ -41,7 +41,8 @@ class DefaultController extends Controller {
      */
     public function getGameUI(Request $request) {
         // replace this example code with whatever you need
-        return $this->render('default/game_ui.twig');
+//        return $this->render('default/game_ui.twig');
+        return $this->render('default/game.html.twig');
     }
 
     /**

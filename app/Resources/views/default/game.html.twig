@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+    </table>
+    <form method="POST" action="{{path('move')}}">
+        <input type="text" name="ligne" id="ligne"/>
+        <input type="text" name="colonne" id="colonne"/>
+        <input type="text" name="cible" id="cible"/>
+        <input type="submit" id="valid" value="validez">
+    </form>
+{% endblock %}
+{% block javascripts %}
+    {{parent()}}
+    <script src="{{ asset('./script/position.js') }}"></script>
+{% endblock %}

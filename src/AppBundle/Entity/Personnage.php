@@ -58,7 +58,19 @@ class Personnage {
      * @ORM\Column(name="pa", type="integer")
      */
     private $pa;
+
+    /**
+     * @var int 
+     * 
+     * @ORM\Column(name="positionH", type="integer")
+     */
     private $positionH;
+
+    /**
+     * @var int 
+     * 
+     * @ORM\Column(name="positionV", type="integer")
+     */
     private $positionV;
 
     /**
@@ -163,7 +175,7 @@ class Personnage {
      *
      * @return int
      */
-    function getPa(){
+    function getPa() {
         return $this->pa;
     }
 
@@ -208,6 +220,8 @@ class Personnage {
 
     function __construct() {
         $this->pa = 2;
+        $this->positionH = 0;
+        $this->positionV = 0;
     }
 
     public function majStats() {
