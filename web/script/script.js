@@ -1,66 +1,38 @@
-
-//qunad le document est pret 
+//quand le document est prêt (à la fin du chargment de la page)
 $(document).ready(function () {
-    centrerButton();
-    centrerForm();
-    centrerFormPerso();
+    centrerObject("button");
+    centrerObject("#selection");
+    centrerObject(".formPerso");
     $("body").css("visibility", "visible");
 });
 
+//quand on redimensionne la fenêtre
 $(window).resize(function () {
-    centrerButton();
-    centrerForm();
-    centrerFormPerso();
+    centrerObject("button");
+    centrerObject("#selection");
+    centrerObject(".formPerso");
 });
 
+//quand on clique sur le bouton
 $("button").click(function () {
-    $(this).fadeOut(1000, function () {
-        $("#selection").fadeIn(1000);
+    $(this).fadeOut(600, function () {
+        $("#selection").fadeIn(600);
     });
 });
 
-function centrerButton() {
-    // on recupere les dimension de la fenetre
+function centrerObject($objet) {
+    //on récupère les dimensions de la fenêtre
     var w = $(window).width();
     var h = $(window).height();
-
-    // on calcul la position du boutton afin qu'il soit centré
-    var top = (h - $("button").height()) / 2;
-    var left = (w - $("button").width()) / 2;
-    //on affecte les nouvelles position calcule
-    $("button").css({
+    //on récupère les dimensions du bouton
+    var objectw = $($objet).width();
+    var objecth = $($objet).height();
+    //on calcule la position du bouton afin qu'il soit au centre
+    var top = (h - objecth) / 2;
+    var left = (w - objectw) / 2;
+    //on affecte les nouvelles positions calculées
+    $($objet).css({
         "left": left + "px",
         "top": top + "px"
     });
-
-}
-function centrerForm() {
-    // on recupere les dimension de la fenetre
-    var w = $(window).width();
-    var h = $(window).height();
-
-    // on calcul la position du boutton afin qu'il soit centré
-    var top = (h - $("#selection").height()) / 2;
-    var left = (w - $("#selection").width()) / 2;
-    //on affecte les nouvelles position calcule
-    $("#selection").css({
-        "left": left + "px",
-        "top": top + "px"
-    });
-
-}
-function centrerFormPerso() {
-    // on recupere les dimension de la fenetre
-    var w = $(window).width();
-    var h = $(window).height();
-
-    // on calcul la position du boutton afin qu'il soit centré
-    var top = (h - $(".formPerso").height()) / 2;
-    var left = (w - $(".formPerso").width()) / 2;
-    //on affecte les nouvelles position calcule
-    $(".formPerso").css({
-        "left": left + "px",
-        "top": top + "px"
-    });
-
 }

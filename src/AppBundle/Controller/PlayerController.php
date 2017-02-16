@@ -10,7 +10,9 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Joueur;
 use AppBundle\Entity\Personnage;
+use AppBundle\Entity\Stats;
 use AppBundle\Form\PersonnageType;
+use AppBundle\Form\StatsType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -75,6 +77,20 @@ class PlayerController extends Controller {
         $this->mergeJoueur($personnage, $r, $em);
         $em->flush();
         return $this->redirectToRoute("stats");
+    }
+
+    /**
+     * @Route("/up/stats", name="statsUp")
+     */
+    public function upStats(Request $request) {
+        $em = $this->getDoctrine()->getManager();
+        $joueur = $request->getSession()->get("j" . strval($request->getSession()->get('actuel')));
+        $stats = $em->getRepository(Stats::class)->find($joueur->getPersonnage()->getStats()->getId());
+        $form = $this->createForm(StatsType::class, $stats);
+        $form->handleRequest($request);
+        $em->merge($stats);
+        $em->flush();
+        return $this->redirect($this->generateUrl('switch'));
     }
 
     /**

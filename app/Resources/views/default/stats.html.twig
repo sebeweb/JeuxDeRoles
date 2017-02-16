@@ -3,11 +3,18 @@
     <div class="formPerso">
         <p>{{ joueur.email }}</p>
         <p>{{ joueur.personnage.nom }}</p>
-        {{form_start(editStats)}}
-        {{form_row(editStats.pv,{'attr':{'min': joueur.personnage.stats.pv, 'max': joueur.personnage.stats.pv+50}})}}
-        {{form_row(editStats.mov,{'attr':{'min': joueur.personnage.stats.mov, 'max': '50'}})}}
-        {{form_row(editStats.att,{'attr':{'min': joueur.personnage.stats.att, 'max': '50'}})}}
+        <input type="button" id="generator" value="generer"/>
+        <input id="rdStats" type="text" name="fname" readonly="" value="0">
+        {{form_start(editStats, {'attr':{'action':path("statsUp")}})}}
+        {{form_row(editStats.pv,{'attr':{'min': joueur.personnage.stats.pv}})}}
+        {{form_row(editStats.mov,{'attr':{'readonly':''}})}}
+        {{form_row(editStats.att,{'attr':{'min': joueur.personnage.stats.att}})}}
         {{form_row(editStats.def,{'attr':{'readonly':''}})}}
+        <input type="submit" value="validez"/>
         {{form_end (editStats)}}
     </div>
+{% endblock %}
+{% block javascripts %}
+    {{parent()}}
+    <script src="{{ asset('./script/stats.js') }}"></script>
 {% endblock %}
