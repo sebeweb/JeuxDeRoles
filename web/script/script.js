@@ -3,6 +3,7 @@ $(document).ready(function () {
     centrerObject("button");
     centrerObject("#selection");
     centrerObject(".formPerso");
+    centrerObject(".table");
     $("body").css("visibility", "visible");
 });
 
@@ -11,6 +12,7 @@ $(window).resize(function () {
     centrerObject("button");
     centrerObject("#selection");
     centrerObject(".formPerso");
+    centrerObject(".table");
 });
 
 //quand on clique sur le bouton
@@ -32,6 +34,7 @@ function centrerObject($objet) {
     var left = (w - objectw) / 2;
     //on affecte les nouvelles positions calculées
     $($objet).css({
+        "position": "relative",
         "left": left + "px",
         "top": top + "px"
     });
